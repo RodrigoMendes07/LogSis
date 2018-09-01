@@ -1,0 +1,123 @@
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context="com.sales.logsis.view.RegistrarContaActivity"
+    android:background="@drawable/login_bg">
+
+    <View
+        android:id="@+id/titulo"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:background="#000000"
+        android:alpha="0.6"
+        android:layout_alignParentTop="true" />
+
+    <EditText
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:id="@+id/txtnome_reg"
+        android:hint="Entre com o Nome"
+        android:textColor="#ffffff"
+        android:drawablePadding="10dp"
+        android:textColorHint="#cccccc"
+        android:drawableLeft="@drawable/ic_contacts_white_24dp"
+        android:layout_marginLeft="20dp"
+        android:layout_marginRight="20dp"
+        android:layout_alignParentTop="true"
+        android:layout_marginTop="180dp"
+        android:maxLines="1" />
+    <EditText
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:inputType="textEmailAddress"
+        android:ems="10"
+        android:textColor="#ffffff"
+        android:textColorHint="#cccccc"
+        android:id="@+id/txtemail_reg"
+        android:hint="Entre com seu Email"
+        android:drawablePadding="10dp"
+        android:drawableLeft="@drawable/ic_email_white_24dp"
+        android:layout_below="@+id/txtnome_reg"
+        android:layout_alignLeft="@+id/txtnome_reg"
+        android:layout_alignStart="@+id/txtnome_reg"
+        android:layout_alignRight="@+id/txtnome_reg"
+        android:layout_alignEnd="@+id/txtnome_reg"
+        android:maxLines="1" />
+
+    <EditText
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:inputType="textPassword"
+        android:ems="10"
+        android:id="@+id/txtsenha_reg"
+        android:hint="Entre com sua Senha"
+        android:textColor="#ffffff"
+        android:textColorHint="#cccccc"
+        android:drawablePadding="10dp"
+        android:drawableLeft="@drawable/ic_vpn_key_white_24dp"
+        android:layout_below="@+id/txtemail_reg"
+        android:layout_alignLeft="@+id/txtemail_reg"
+        android:layout_alignStart="@+id/txtemail_reg"
+        android:layout_alignRight="@+id/txtemail_reg"
+        android:layout_alignEnd="@+id/txtemail_reg"
+        android:maxLines="1" />
+
+    <EditText
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:id="@+id/txtfone_reg"
+        android:hint="Entre com o Telefone"
+        android:textColor="#ffffff"
+        android:textColorHint="#cccccc"
+        android:drawablePadding="10dp"
+        android:drawableLeft="@drawable/ic_phone_white_24dp"
+        android:layout_below="@+id/txtsenha_reg"
+        android:layout_alignLeft="@+id/txtsenha_reg"
+        android:layout_alignStart="@+id/txtsenha_reg"
+        android:layout_alignRight="@+id/txtsenha_reg"
+        android:layout_alignEnd="@+id/txtsenha_reg"
+        android:maxLines="1" />
+
+    <Button
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="Registro"
+        android:id="@+id/btn_reg"
+        android:textColor="#ffffff"
+        android:background="@drawable/blue_btn_drawable"
+        android:layout_below="@+id/txtfone_reg"
+        android:layout_alignLeft="@+id/txtfone_reg"
+        android:layout_alignStart="@+id/txtfone_reg"
+        android:layout_marginTop="30dp"
+        android:layout_alignRight="@+id/txtfone_reg"
+        android:layout_alignEnd="@+id/txtfone_reg" />
+
+    <TextView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:textAppearance="?android:attr/textAppearanceLarge"
+        android:text="Criar Conta"
+        android:textColor="#ffffff"
+        android:textSize="40sp"
+        android:id="@+id/txt_sucesso_nome"
+        android:gravity="center_horizontal"
+        android:layout_marginTop="63dp"
+        android:layout_alignParentTop="true"
+        android:layout_alignParentRight="true"
+        android:layout_alignParentEnd="true" />
+
+    <TextView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:textAppearance="?android:attr/textAppearanceSmall"
+        android:text="Depois de clicar no botão de Registro, você será redirecionado para a Tela de Login"
+        android:id="@+id/textmsg"
+        android:textColor="#ffffff"
+        android:gravity="center_horizontal"
+        android:layout_below="@+id/txt_sucesso_nome"
+        android:layout_alignRight="@+id/txtnome_reg"
+        android:layout_alignEnd="@+id/txtnome_reg"
+        android:layout_alignLeft="@+id/txtnome_reg"
+        android:layout_alignStart="@+id/txtnome_reg" />
+</RelativeLayout>

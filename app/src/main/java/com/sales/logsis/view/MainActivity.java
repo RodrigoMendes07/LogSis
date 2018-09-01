@@ -1,4 +1,4 @@
-package com.sales.logsis;
+package com.sales.logsis.view;
 
 import androidx.appcompat.app.AlertDialog;
 import androidx.appcompat.app.AppCompatActivity;
@@ -16,6 +16,7 @@ import android.widget.TextView;
 import android.widget.Toast;
 
 import com.sales.logsis.Model.SQLiteDBHelper;
+import com.sales.logsis.R;
 
 public class MainActivity extends AppCompatActivity {
 
@@ -31,10 +32,10 @@ public class MainActivity extends AppCompatActivity {
         setContentView(R.layout.activity_main);
 
         //realizar referenciamento com objetos do layout
-        final EditText txtEmail = (EditText) findViewById(R.id.txtEmail);
-        final EditText txtSenha = (EditText) findViewById(R.id.txtSenha);
-        Button btnAcessar = (Button) findViewById(R.id.btnAcessar);
-        TextView btnReg = (TextView) findViewById(R.id.btnReg);
+        final EditText txtEmail =  findViewById(R.id.txtEmail);
+        final EditText txtSenha =  findViewById(R.id.txtSenha);
+        Button btnAcessar =  findViewById(R.id.btnAcessar);
+        TextView btnReg = findViewById(R.id.btnReg);
 
 
         //Disponbilizando Pipeline SQLite
@@ -88,12 +89,12 @@ public class MainActivity extends AppCompatActivity {
             }
     });
 
-    // Intent para abrir RegistroContaActivity
+    // Intent para abrir RegistrarContaActivity
         btnReg.setOnClickListener(new View.OnClickListener() {
         @Override
         public void onClick(View view) {
 
-            Intent intent = new Intent(MainActivity.this,RegistroContaActivity.class);
+            Intent intent = new Intent(MainActivity.this, RegistrarContaActivity.class);
             startActivity(intent);
         }
     });

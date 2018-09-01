@@ -2,4 +2,13 @@
     <string name="app_name">LogSis</string>
     <string name="title_activity_login">LoginActivity</string>
     <string name="login">Login</string>
+    <string name="da">da</string>
+    <string name="sua_conta">Sua Conta</string>
+    <string name="entre_usuario">Entre com Usuário</string>
+    <string name="senha_usuario">Senha do Usuário</string>
+    <string name="acessar">Acessar</string>
+    <string name="novo_aqui">Novo por aqui? Registre-se agora.</string>
+    <string name="txt_sucesso_nome">Bem-vindo, Alberto Sales</string>
+    <string name="txt_sucesso_email">albertosales@sapo.pt</string>
+    <string name="logout">Logout</string>
 </resources>

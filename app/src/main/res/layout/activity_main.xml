@@ -4,17 +4,17 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context=".MainActivity">
+    tools:context=".view.MainActivity">
 
     <TextView
-        android:id="@string/login"
+        android:id="@+id/login"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_alignParentStart="true"
         android:layout_alignParentTop="true"
         android:layout_marginStart="124dp"
         android:layout_marginTop="66dp"
-        android:text="LOGIN"
+        android:text="@string/login"
         android:textSize="36sp" />
 
     <TextView
@@ -25,7 +25,7 @@
         android:layout_alignParentTop="true"
         android:layout_marginStart="157dp"
         android:layout_marginTop="133dp"
-        android:text="DA"
+        android:text="@string/da"
         android:textSize="30sp"
         tools:text="DA" />
 
@@ -37,7 +37,7 @@
         android:layout_alignParentTop="true"
         android:layout_marginStart="79dp"
         android:layout_marginTop="191dp"
-        android:text="SUA CONTA"
+        android:text="@string/sua_conta"
         tools:textSize="36sp" />
 
     <EditText
@@ -48,8 +48,9 @@
         android:layout_alignParentBottom="true"
         android:layout_marginBottom="204dp"
         android:ems="10"
-        android:inputType="textPersonName"
-        android:text="Entre com Usuário" />
+        android:inputType="textEmailAddress"
+        android:text="@string/entre_usuario"
+        android:autofillHints="@string/entre_usuario"/>
 
     <EditText
         android:id="@+id/txtSenha"
@@ -61,7 +62,8 @@
         android:layout_marginBottom="140dp"
         android:ems="10"
         android:inputType="textPassword"
-        android:text="Senha do Usuário" />
+        android:text="@string/senha_usuario"
+        android:autofillHints="@string/senha_usuario"/>
 
     <Button
         android:id="@+id/btnAcessar"
@@ -71,7 +73,7 @@
         android:layout_alignParentBottom="true"
         android:layout_marginStart="59dp"
         android:layout_marginBottom="79dp"
-        android:text="Acessar" />
+        android:text="@string/acessar" />
 
     <TextView
         android:id="@+id/btnReg"
@@ -80,6 +82,6 @@
         android:layout_alignStart="@+id/textView2"
         android:layout_alignParentBottom="true"
         android:layout_marginBottom="50dp"
-        android:text="Novo por aqui? Registre-se agora." />
+        android:text="@string/novo_aqui" />
 
 </RelativeLayout>
