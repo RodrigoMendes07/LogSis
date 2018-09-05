@@ -1,5 +1,6 @@
 package com.sales.logsis.view;
 
+import android.app.AlertDialog;
 import android.content.ContentValues;
 import android.content.DialogInterface;
 import android.database.sqlite.SQLiteDatabase;
@@ -9,12 +10,12 @@ import android.view.View;
 import android.widget.Button;
 import android.widget.EditText;
 
-import com.sales.logsis.Model.SQLiteDBHelper;
+import com.sales.logsis.Model.dao.SQLiteDBHelper;
 import com.sales.logsis.R;
 
 import androidx.appcompat.app.ActionBar;
-import androidx.appcompat.app.AlertDialog;
 import androidx.appcompat.app.AppCompatActivity;
+
 
 public class RegistrarContaActivity extends AppCompatActivity {
 
@@ -33,11 +34,11 @@ public class RegistrarContaActivity extends AppCompatActivity {
         openHelper = new SQLiteDBHelper(this);
 
         //Referenciando os widgets EditText e Botão inserido dentro do arquivo layout (xml)
-        final EditText _txtnome = (EditText) findViewById(R.id.txtnome_reg);
-        final EditText _txtemail = (EditText) findViewById(R.id.txtemail_reg);
-        final EditText _txtsenha = (EditText) findViewById(R.id.txtsenha_reg);
-        final EditText _txtfone = (EditText) findViewById(R.id.txtfone_reg);
-        Button   _btnreg = (Button) findViewById(R.id.btn_reg);
+        final EditText txtNome = (EditText) findViewById(R.id.txtnome_reg);
+        final EditText txtEmail = (EditText) findViewById(R.id.txtemail_reg);
+        final EditText txtSenha = (EditText) findViewById(R.id.txtsenha_reg);
+        final EditText txtFone = (EditText) findViewById(R.id.txtfone_reg);
+        Button _btnreg = (Button) findViewById(R.id.btn_reg);
 
         //Registrando o evento do clique do botão
         _btnreg.setOnClickListener(new View.OnClickListener() {
@@ -46,10 +47,10 @@ public class RegistrarContaActivity extends AppCompatActivity {
 
                 db = openHelper.getWritableDatabase();
 
-                String nomeCompleto = _txtnome.getText().toString();
-                String email = _txtemail.getText().toString();
-                String senha = _txtsenha.getText().toString();
-                String fone = _txtfone.getText().toString();
+                String nomeCompleto = txtNome.getText().toString();
+                String email = txtEmail.getText().toString();
+                String senha = txtSenha.getText().toString();
+                String fone = txtFone.getText().toString();
 
                 //Chamando metodo InserirDados - Definido abaixo
                 InserirDados(nomeCompleto, email, senha, fone);
@@ -76,16 +77,14 @@ public class RegistrarContaActivity extends AppCompatActivity {
 
     }
 
-    //Inserting Data into database - Like INSERT INTO QUERY.
-    public void InserirDados(String fullName, String email, String password, String mobile ) {
+    //Inserindo dados na Database
+    public void InserirDados(String nomeCompleto, String email, String senha, String fone ) {
 
         ContentValues values = new ContentValues();
-        values.put(SQLiteDBHelper.COLUMN_NOME,fullName);
+        values.put(SQLiteDBHelper.COLUMN_NOME,nomeCompleto);
         values.put(SQLiteDBHelper.COLUMN_EMAIL,email);
-        values.put(SQLiteDBHelper.COLUMN_SENHA,password);
-        values.put(SQLiteDBHelper.COLUMN_FONE,mobile);
+        values.put(SQLiteDBHelper.COLUMN_SENHA,senha);
+        values.put(SQLiteDBHelper.COLUMN_TELEFONE,fone);
         long id = db.insert(SQLiteDBHelper.TABELA_NOME,null,values);
-
     }
-
 }

@@ -1,12 +1,13 @@
 package com.sales.logsis.view;
 
+import android.app.AlertDialog;
 import android.content.DialogInterface;
 import android.content.Intent;
 import android.graphics.Bitmap;
 import android.graphics.BitmapFactory;
 import android.net.Uri;
-
 import android.os.Bundle;
+
 import android.view.View;
 import android.widget.Button;
 import android.widget.ImageView;
@@ -18,7 +19,6 @@ import com.sales.logsis.R;
 import java.io.FileNotFoundException;
 
 import androidx.appcompat.app.ActionBar;
-import androidx.appcompat.app.AlertDialog;
 import androidx.appcompat.app.AppCompatActivity;
 
 public class LoginActivity extends AppCompatActivity {
@@ -31,22 +31,22 @@ public class LoginActivity extends AppCompatActivity {
         setContentView(R.layout.activity_login_sucesso);
 
         //PARA OCULTAR A AppBar DA TELA CHEIA.
-        ActionBar ab = getSupportActionBar();
-        ab.hide();
+//        ActionBar ab = getSupportActionBar();
+//        ab.hide();
 
-        TextView txtname = (TextView) findViewById(R.id.txt_sucesso_nome);
-        TextView txtemail = (TextView) findViewById(R.id.txt_sucesso_email);
-        Button _btnlogout = (Button) findViewById(R.id.btn_logout);
+        TextView txtNome = (TextView) findViewById(R.id.txt_sucesso_nome);
+        TextView txtEmail = (TextView) findViewById(R.id.txt_sucesso_email);
+        Button btnLogout = (Button) findViewById(R.id.btn_logout);
         dpImage = (ImageView) findViewById(R.id.imgclick);
 
         Intent intent = getIntent();
 
-        String loginName = intent.getStringExtra("nome");
+        String loginNome = intent.getStringExtra("nome");
         String loginEmail = intent.getStringExtra("email");
-        txtname.setText("Bem-Vindo, " +loginName);
-        txtemail.setText(loginEmail);
+        txtNome.setText("Bem-Vindo, " +loginNome);
+        txtEmail.setText(loginEmail);
 
-        _btnlogout.setOnClickListener(new View.OnClickListener() {
+        btnLogout.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
 
@@ -57,11 +57,9 @@ public class LoginActivity extends AppCompatActivity {
                     @Override
                     public void onClick(DialogInterface dialogInterface, int i) {
 
-                        Intent intent = new Intent(LoginActivity.this, MainActivity.class);
+                        Intent intent = new Intent(LoginActivity.this,MainActivity.class);
                         startActivity(intent);
-
                         finish();
-
                     }
                 });
 
@@ -78,7 +76,7 @@ public class LoginActivity extends AppCompatActivity {
             }
         });
 
-        //=========Seção para mudança de imagem apresentada quando cliar=========
+        //=========Seção para mudança de imagem apresentada quando clicar=========
 
         dpImage.setOnClickListener(new View.OnClickListener() {
             @Override
